@@ -43,12 +43,12 @@ def get_otp():
     received_otp = request.form['received_otp']
     mobile_number = request.form['number']
 
-    account_sid = 'AC69612d0ab71e53c0b9690bdb981577c7'
-    auth_token = '663fa2b62d980775e47180ad3d30de07'
+    account_sid = 'ACdf8e6969b548fe82bd3593b2919cbf89'
+    auth_token = '1911a51f28220dd35beca3fbde30011e'
     client = Client(account_sid, auth_token)
                                             
     verification_check = client.verify \
-        .services('VA4e48a9526c19a731e87a8ca33a0338ef') \
+        .services('IS4d49e029657d4f0faa729fc3899de698') \
         .verification_checks \
         .create(to=mobile_number, code=received_otp)
     print(verification_check.status)
